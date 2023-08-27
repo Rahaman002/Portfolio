@@ -19,7 +19,7 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-      I am Abdul Rahaman, a highly motivated B.Tech CSE graduate with a strong foundation in programming languages like C, C++, and Python, complemented by web development skills in HTML, CSS, JavaScript, and React. My internship experience at Topnotch Solutions solidified my proficiency in web development technologies, while my involvement in cutting-edge projects like hand gesture-based virtual mouse control and deep learning-based medical image analysis demonstrates my commitment to innovation. I am a published author and a dedicated learner, constantly seeking self-improvement and new technological challenges. My blend of academic excellence, problem-solving abilities, and leadership skills make me an asset to any tech-driven organization looking for a dynamic and driven team member.
+      A highly motivated B.Tech CSE graduate with a strong foundation in programming languages like C, C++, and Python, complemented by web development skills in HTML, CSS, JavaScript, and React. My internship experience at Topnotch Solutions solidified my proficiency in web development technologies, while my involvement in cutting-edge projects like hand gesture-based virtual mouse control and deep learning-based medical image analysis demonstrates my commitment to innovation. I am a published author and a dedicated learner, constantly seeking self-improvement and new technological challenges. My blend of academic excellence, problem-solving abilities, and leadership skills make me an asset to any tech-driven organization looking for a dynamic and driven team member.
       </p>
     </motion.section>
   );
