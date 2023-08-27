@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
