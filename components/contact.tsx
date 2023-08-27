@@ -1,13 +1,11 @@
 "use client"
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "./section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
-import { sendEmail } from "@/actions/sendEmail";
+import emailjs from 'emailjs-com';
 import SubmitBtn from "./submit-btn";
 import toast from "react-hot-toast";
-import emailjs from 'emailjs-com';
-import { useState } from "react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,7 +14,7 @@ export default function Contact() {
     message: '',
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -33,15 +31,15 @@ export default function Contact() {
       .send('service_uouany4', 'template_x5vzmsc', formData, '_M-8VgbrEe6KhNsYM')
       .then((response) => {
         console.log('Email sent successfully:', response);
-        toast.success('Email not sent'); 
+        toast.success('Email sent successfully');
       })
       .catch((error) => {
         console.error('Email sent failed:', error);
-        toast.error('Email not sent'); 
+        toast.error('Email not sent');
       });
 
     setFormData({
-      to_name: '',
+      from_name: '',
       from_email: '',
       message: '',
     });
@@ -80,8 +78,8 @@ export default function Contact() {
           <input
             className="h-14 px-4 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
             name="from_name"
-            value={formData.to_name}
-            onChange={handleInputChange}
+            value={formData.from_name}
+            onChange={(e) => handleInputChange(e)}
             type="text"
             required
             placeholder="Your Name"
@@ -92,7 +90,7 @@ export default function Contact() {
             className="h-14 px-4 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
             name="from_email"
             value={formData.from_email}
-            onChange={handleInputChange}
+            onChange={(e) => handleInputChange(e)}
             type="email"
             required
             placeholder="Your Email"
@@ -103,7 +101,7 @@ export default function Contact() {
             className="h-40 px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
             name="message"
             value={formData.message}
-            onChange={handleInputChange}
+            onChange={(e) => handleInputChange(e)}
             placeholder="Your Message"
             required
           />
