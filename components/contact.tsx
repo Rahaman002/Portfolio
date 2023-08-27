@@ -26,7 +26,7 @@ export default function Contact() {
 
   const { ref } = useSectionInView("Contact");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     emailjs
@@ -75,7 +75,7 @@ export default function Contact() {
         or through this form.
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+      <form onSubmit={(e) => handleSubmit(e)} className="mt-6 space-y-4">
         <div className="flex flex-col">
           <input
             className="h-14 px-4 rounded-lg border border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
